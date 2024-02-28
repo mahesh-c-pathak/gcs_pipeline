@@ -5,7 +5,7 @@ fake = Faker()
 def get_registerd_user():
     return {
         "name":fake.name(),
-        "address":fake.address(),
+        "country":fake.country(),
         "created_at":fake.year()
     }
 

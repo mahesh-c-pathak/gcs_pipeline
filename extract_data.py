@@ -13,6 +13,8 @@ if __name__ == "__main__":
     # dt = datetime.datetime.fromtimestamp(curr_time).strftime("%Y-%m-%d %H:%M:%S")
     curr_date = datetime.datetime.fromtimestamp(curr_time).strftime("%Y-%m-%d")
     start_time = datetime.datetime.fromtimestamp(curr_time).strftime("%H:%M:%S")
+    start_time=str(start_time).replace(":", "_")
+    
 
     path = f"./{curr_date}"
 
@@ -29,7 +31,7 @@ if __name__ == "__main__":
 
 
 
-    field_names = ['name', 'address', 'created_at'] 
+    field_names = ['name', 'country', 'created_at'] 
     with open(file_path , 'a', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=field_names)
         writer.writeheader()
