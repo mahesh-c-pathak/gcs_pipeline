@@ -5,6 +5,32 @@
 1. Create an account with your Google email ID 
 2. Setup your first [project](https://console.cloud.google.com/) if you haven't already
     * eg. "gcs-pipeline", and note down the "Project ID" (we'll use this later when deploying infra with TF)
+3. Create an ssh key in your local system in the .ssh folder
+   * ssh-keygen -t rsa -f ~/.ssh/KEY_FILENAME -C USERNAME -b 2048
+5. Add the public key (.pub) to your VM instance
+   * https://cloud.google.com/compute/docs/connect/add-ssh-keys#expandable-2
+6. Create a config file in your `.ssh` folder
+
+     ```bash
+     touch ~/.ssh/config
+     ```
+7. Copy the following snippet and replace with name,External IP of your VM. Username and path to the ssh private key
+
+    ```bash
+    Host <your VM instances name>
+        HostName <External IP Address>
+        User <username>
+        IdentityFile <path/to/home/.ssh/keyfile>
+    ```
+8. Once you are setup, you can simply SSH into the servers using the below commands in separate terminals. Do not forget to change the IP address of VM restarts.
+
+    ```bash
+    ssh <your VM instances name>
+    ```
+9. Access VM from VScode
+    * Enable vs code extension remote-ssh 
+    * In VS Code, select Remote-SSH: Connect to Host... from the Command Palette (F1, Ctrl+Shift+P)
+    * You will have to forward ports from your VM to your local machine for you to be able to see Kafka, Airflow UI.
 3. Setup [service account & authentication](https://cloud.google.com/docs/authentication/getting-started) for this project
     * Grant `Viewer` role to begin with.
     * Download service-account-keys (.json) for auth.
