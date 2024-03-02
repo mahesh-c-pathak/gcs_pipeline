@@ -31,6 +31,14 @@
     * Enable vs code extension remote-ssh 
     * In VS Code, select Remote-SSH: Connect to Host... from the Command Palette (F1, Ctrl+Shift+P)
     * You will have to forward ports from your VM to your local machine for you to be able to see Kafka, Airflow UI.
+10. Clone the repository in your local machine. we will use the setup.sh to install Anaconda, Docker, docker-compose on VM
+    ```bash
+    git clone https://github.com/mahesh-c-pathak/gcs_pipeline.git
+    cd gcs_pipeline/scripts
+    chmod +x vm_setup.sh
+    ./vm_setup.sh
+    ```
+
 3. Setup [service account & authentication](https://cloud.google.com/docs/authentication/getting-started) for this project
     * Grant `Viewer` role to begin with.
     * Download service-account-keys (.json) for auth.
