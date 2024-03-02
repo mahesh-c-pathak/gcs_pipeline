@@ -49,5 +49,21 @@ eval "$(cat ~/.bashrc | tail -n +10)" # A hack because source .bashrc doesn't wo
 
 echo "docker-compose version..."
 docker-compose --version
+cd ~
+cd bin
+
+echo "Downloading terraform..."
+
+wget https://releases.hashicorp.com/terraform/1.1.7/terraform_1.1.7_linux_amd64.zip
+
+sudo apt-get install unzip
+
+unzip terraform_1.1.7_linux_amd64.zip
+
+rm terraform_1.1.7_linux_amd64.zip
+
+terraform -v
+
+echo "Installed terraform..."
 
 mkdir -p ~/.google/credentials
