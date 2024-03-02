@@ -46,7 +46,7 @@
 
 ```shell
 # Refresh service-account's auth-token for this session
-gcloud auth application-default login
+gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
 
 # Initialize state file (.tfstate)
 terraform init
