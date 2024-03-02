@@ -6,6 +6,7 @@
 2. Setup your first [project](https://console.cloud.google.com/) if you haven't already
     * eg. "gcs-pipeline", and note down the "Project ID" (we'll use this later when deploying infra with TF)
 3. Create an ssh key in your local system in the .ssh folder
+   * https://cloud.google.com/compute/docs/connect/create-ssh-keys
    * ssh-keygen -t rsa -f ~/.ssh/KEY_FILENAME -C USERNAME -b 2048
 5. Add the public key (.pub) to your VM instance
    * https://cloud.google.com/compute/docs/connect/add-ssh-keys#expandable-2
