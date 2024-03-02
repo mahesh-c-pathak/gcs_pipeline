@@ -46,6 +46,7 @@
 
 ```shell
 # Refresh service-account's auth-token for this session
+export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
 gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
 
 # Initialize state file (.tfstate)
