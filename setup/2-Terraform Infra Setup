@@ -32,7 +32,6 @@ Spin up the Infra -
 - Once you are done with the project. Teardown the infra using-
 
   ```bash
-  terraform destroy
+    terraform destroy
   ```
 
-**Note:** The infra was setup a tad generously, you might not actually be fully utilizing the compute power. Feel free to reduce the instance sizes and test.
