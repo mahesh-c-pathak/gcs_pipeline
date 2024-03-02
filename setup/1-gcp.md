@@ -48,7 +48,7 @@
    export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
    
    # Refresh token/session, and verify authentication
-   gcloud auth application-default login
+   gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
    ```
    
 ### Setup for Access
